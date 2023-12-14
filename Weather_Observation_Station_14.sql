@@ -10,8 +10,8 @@ Given a table STATION that holds data for five fields namely ID, CITY, STATE, NO
 | LAT_N       | NUMERIC    |
 | LONG_W      | NUMERIC    |
 +-------------+------------+
- 
-Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer. 
+
+Query the greatest value of the Northern Latitudes (LAT_N) from STATION that is less than 137.2345. Truncate your answer to decimal places.
 */
 
-SELECT DISTINCT CITY FROM STATION WHERE ID % 2 = 0;
+SELECT ROUND(MAX(LAT_N) ,4) FROM STATION WHERE LAT_N < 137.2345;

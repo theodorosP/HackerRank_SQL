@@ -10,8 +10,7 @@ Given a table STATION that holds data for five fields namely ID, CITY, STATE, NO
 | LAT_N       | NUMERIC    |
 | LONG_W      | NUMERIC    |
 +-------------+------------+
- 
-Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer. 
-*/
 
-SELECT DISTINCT CITY FROM STATION WHERE ID % 2 = 0;
+Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than 137.2345. Round your answer to decimal places.
+*/
+SELECT ROUND(LONG_W, 4) FROM STATION WHERE LAT_N = (SELECT MAX(LAT_N) FROM STATION WHERE LAT_N < 137.2345)

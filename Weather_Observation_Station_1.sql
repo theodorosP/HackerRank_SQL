@@ -14,7 +14,7 @@ The STATION table is described as follows:
 | DISTRICT    | VARCHAR2(20) |
 | POPULATION  | NUMBER       |
 +-------------+--------------+
-
+Query a list of CITY and STATE from the STATION table. 
  */
 
 SELECT CITY, STATE from STATION;

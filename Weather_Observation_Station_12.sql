@@ -10,8 +10,8 @@ Given a table STATION that holds data for five fields namely ID, CITY, STATE, NO
 | LAT_N       | NUMERIC    |
 | LONG_W      | NUMERIC    |
 +-------------+------------+
- 
-Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer. 
-*/
 
-SELECT DISTINCT CITY FROM STATION WHERE ID % 2 = 0;
+Query the list of CITY names from STATION that do not start with vowels and do not end with vowels. Your result cannot contain duplicates.
+
+*/
+SELECT DISTINCT(CITY) FROM STATION WHERE SUBSTRING(CITY, 1, 1) NOT IN ('a', 'e', 'i', 'o', 'u') AND SUBSTRING(CITY, LENGTH(CITY), 1) NOT IN ('a', 'e', 'i', 'o', 'u')

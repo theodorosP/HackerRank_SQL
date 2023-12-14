@@ -10,8 +10,9 @@ Given a table STATION that holds data for five fields namely ID, CITY, STATE, NO
 | LAT_N       | NUMERIC    |
 | LONG_W      | NUMERIC    |
 +-------------+------------+
- 
-Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer. 
+
+Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. Your result cannot contain duplicates.
+
 */
 
-SELECT DISTINCT CITY FROM STATION WHERE ID % 2 = 0;
+SELECT DISTINCT(CITY) FROM STATION WHERE SUBSTRING(CITY, 1, 1)  IN ('a', 'e', 'i', 'o', 'u') AND SUBSTRING(CITY, LENGTH(CITY), 1) IN ('a', 'e', 'i', 'o', 'u')
